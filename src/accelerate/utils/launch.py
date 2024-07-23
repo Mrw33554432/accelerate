@@ -291,8 +291,8 @@ def prepare_deepspeed_cmd_env(args: argparse.Namespace) -> Tuple[List[str], Dict
     """
     Prepares and returns the command list and an environment with the correct DeepSpeed environment variables.
     """
-    num_processes = args.num_processes
-    num_machines = args.num_machines
+    num_processes = int(args.num_processes)
+    num_machines = int(args.num_machines)
     main_process_ip = args.main_process_ip
     main_process_port = args.main_process_port
     cmd = None
